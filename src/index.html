@@ -10,76 +10,138 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <a class="logo" href="#">IT WEBSITE</a>
+    <header>
+        <div class="menu-icon">
+            <i class="fas fa-bars menu-icon"></i>
+            <div class="mobile-menu_content">
+                <div class="mobile-menu_wrapper">
+                    <div class="mobile-menu_cross">
+                        <img src="\src\assets\icons\close.png" alt="close">
+                    </div>
+                    <div class="mobile-menu_logo">
+                        <img src="/src/assets/icons/itweb.png" alt="logo">
+                    </div>
+                    <nav class="mobile-menu_menu">
+                        <a href="#" class="mobile-menu_menu-item">Services</a>
+                        <a href="#" class="mobile-menu_menu-item"> Media</a>
+                        <a href="#" class="mobile-menu_menu-item"> Cases</a>
+                        <a href="#" class="mobile-menu_menu-item"> FAQ</a>
+                        <a href="#" class="mobile-menu_menu-item"> Contacts</a>
+                    </nav>
+                    <div class="mobile-menu_contact-info">
+                        <a href="#" class="mobile-phones"></i> +7 (111) 111 11 11</a>
+                        <a href="#" class="mobile-phones">+7 (111) 111 11 11</a>
+                        <a href="#" class="mobile-email">itcompany@mail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logo">IT WEBSITE</div>
         <nav>
-            <ul>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Media</a></li>
-                <li><a href="#">Cases</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Contacts</a></li>
-            </ul>
+            <a href="#">Services</a>
+            <a href="#">Media</a>
+            <a href="#">Cases</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contacts</a>
         </nav>
         <div class="contact-info">
-            <i class="fas fa-phone"></i> +7 (111) 111 11 11
-            <i style="margin-left: 15"></i> +7 (111) 111 11 11
-            <i class="fas fa-envelope" style="margin-left: 20px;"></i> itcompany@mail.com
+            <div class="phones">
+                <a href="#"><i class="fas fa-phone-alt"></i> +7 (111) 111 11 11</a>
+                <a href="#">+7 (111) 111 11 11</a>
+            </div>
+            <div class="email">
+                <a href="#"><i class="fas fa-envelope"></i> itcompany@mail.com</a>
+            </div>
         </div>
     </header>
-
     <main>
-        <section class="main-section">
-            <article class="main-page-info">
-                <h1>Development of <span class="highlight">mobile</span> <span class="highlight">applications</span> and
-                    <span class="highlight">web services</span> of any complexity
+        <section class="intro">
+            <div class="text">
+                <h1> Development of <span> mobile applications </span> and <span> web services</span> of any complexity
                 </h1>
                 <p>We create mobile applications for iOS, Android that transfer your business to mobile applications of
-                    your customets' devices.</p>
-            </article>
-
-            <div class="form-container">
-                <p>Leave your contacts, and we will call you back within 30 minutes</p>
-                <form>
-                    <div>
-                        <label for="phone">Phone number</label>
-                        <input type="text" placeholder="Enter your phone number" class="input-field" required>
+                    your customers' devices </p>
+                <div class="form">
+                    <h3>Leave your contacts and we will call you back within 30 minutes</h3>
+                    <div class="form-elements">
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="text" />
+                        </div>
+                        <div>
+                            <label for="name">Name</label>
+                            <input id="name" type="text" />
+                        </div>
+                        <button>Get consultation</button>
                     </div>
-
-                    <div>
-                        <label for="name">Full name</label>
-                        <input type="text" id="name" placeholder="Enter your name" class="input-field" required>
+                </div>
+            </div>
+        </section>
+        <section class="development-cycle">
+            <div class="container">
+                <h2>Full development cycle</h2>
+                <div class="content">
+                    <div class="left">
+                        <p>We use proven technologies</p>
+                        <h3>Web</h3>
+                        <p>
+                            PHP <span>/</span> Javascript <span>/</span> NodeJS <span>/</span> Web Socket <span>/</span>
+                            Socket.io <span>/</span> Vue.js <span>/</span> Nuxt <span>/</span> MySQL <span>/</span>
+                            Laravel <span>/</span>
+                            GOlang <span>/</span> django <span>/</span> Python
+                        </p>
+                        <h3>Mobile</h3>
+                        <p>
+                            Swift <span>/</span> Kotlin <span>/</span> Alamofire <span>/</span> Firebase <span>/</span>
+                            CoreData <span>/</span> Realm <span>/</span> Room <span>/</span>
+                            Coroutines <span>/</span> RxJava <span>/</span> RxSwift <span>/</span> Unit Test
+                            <span>/</span> Navigation
+                        </p>
                     </div>
-                    <button type="submit" class="btn-submit">Get consultation</button>
-                </form>
+                    <div class="right">
+                        <ul>
+                            <li><a href="#">iOS development</a></li>
+                            <li><a href="#">Android development</a></li>
+                            <li><a href="#">Web development</a></li>
+                            <li><a href="#">UI/UX design</a></li>
+                            <li><a href="#">Testing</a></li>
+                            <li><a href="#">Launch</a></li>
+                            <li><a href="#">IT consulting</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
-
-    <footer class="footer">
-        <h2>IT WEBSITE</h2>
-        <div class="footer-content">
-            <div class="icon">
-                <i class="fas fa-phone"></i> Contact nums
-                <div>+7 (778) 395 90 26</div>
+    <footer>
+        <div class="footer">
+            <h1>IT WEBSITE</h1>
+            <div class="content">
+                <div>
+                    <p class="light-gray"><i class="fas fa-phone-alt"></i> Contact nums</p>
+                    <p>+7 (778) 395 90 26</p>
+                </div>
+                <div>
+                    <p class="light-gray"><i class="fas fa-envelope"></i> Post</p>
+                    <p>mail@mail.com</p>
+                </div>
+                <div>
+                    <p class="light-gray"><i class="fas fa-map-marker-alt"></i> Adress</p>
+                    <p>City city, steet st. 90</p>
+                </div>
+                <div>
+                    <p class="light-gray"><i class="fas fa-file-alt"></i> Leave a request</p>
+                    <p>Leave a request</p>
+                </div>
             </div>
-            <div class="icon">
-                <i class="fas fa-envelope"></i> Post
-                <div>mail@mail.com</div>
+            <div class="bottom">
+                <i class="fas fa-globe"></i>
+                <p>We work throughout world</p>
             </div>
-            <div class="icon">
-                <i class="fas fa-map-marker-alt"></i> Address
-                <div>City, Street, 90</div>
-            </div>
-            <div class="icon">
-                <i class="fas fa-file-alt"></i> Leave a request
-                <div>Submit your inquiry</div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <i class="fas fa-globe"></i> We work worldwide
         </div>
     </footer>
 </body>
+
 
 </html>
