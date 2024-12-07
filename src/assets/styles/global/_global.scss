@@ -2,16 +2,26 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f7fa;
-    max-width: auto;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    
   }
   
   .container {
-    margin: 0px 40px 60px 40px;
+    margin: 0px 40px 60px 108px;
     padding: 10px 0 10px 0;
   }
   
 
 .blue{
   color:blue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
