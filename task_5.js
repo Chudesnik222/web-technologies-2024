@@ -1,17 +1,24 @@
-function longestCommonPrefix(strs) {
+var longestCommonSubstring = function (strs) {
     if (strs.length === 0) return "";
 
-    let prefix = strs[0];
-
-    for (let i = 1; i < strs.length; i++) {
-        while (strs[i].indexOf(prefix) !== 0) {
-            prefix = prefix.substring(0, prefix.length - 1);
-            if (prefix === "") return "";
-        }
+    function isCommonSubstring(sub) {
+        return strs.every(str => str.toLowerCase().includes(sub.toLowerCase()));
     }
 
-    return prefix.length >= 2 ? prefix : "";
-}
+    let longest = "";
 
-console.log(longestCommonPrefix(["flower", "flow", "flight"]));
-console.log(longestCommonPrefix(["2,2,1", "2,2,3"]));
+    for (let length = 2; length <= strs[0].length; length++) {
+        for (let start = 0; start <= strs[0].length - length; start++) {
+            let substring = strs[0].slice(start, start + length);
+            if (isCommonSubstring(substring)) {
+                if (substring.length > longest.length) {
+                    longest = substring;
+                }
+            }
+        }
+    }
+    return longest;
+};
+
+console.log(longestCommonSubstring(["цветок", "поток", "хлопок"]));
+console.log(longestCommonSubstring(["собака", "гоночная маашина", "машина"]));
