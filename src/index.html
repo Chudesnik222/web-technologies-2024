@@ -1,24 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
-      <link rel="stylesheet" href="style/index.css">
-  </head>
-  <body>
-      <main>
-          <div id="game-wrap">
-            <table id="game"></table>
-          </div>
-          <div id="menu">
-            <div id="playButton" class="menuButton">Старт</div>
-            <div id="newGameButton" class="menuButton">Новая игра</div>
-          </div>
-      </main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню Пиццы</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Заказ Пиццы</h1>
+        
+        <div class="menu-section">
+            <h2>Выберите пиццу:</h2>
+            <select id="pizzaType">
+                <option value="">--Выберите--</option>
+                <option value="Маргарита">Маргарита</option>
+                <option value="Пепперони">Пепперони</option>
+                <option value="Баварская">Баварская</option>
+            </select>
+        </div>
 
-      <script src="./index.js"></script>
-  </body>
+        <div class="menu-section hidden" id="sizeDiv">
+            <h2>Выберите размер:</h2>
+            <select id="size">
+                <option value="">--Выберите--</option>
+                <option value="Большая">Большая</option>
+                <option value="Маленькая">Маленькая</option>
+            </select>
+        </div>
+
+        <div class="menu-section hidden" id="toppingsDiv">
+            <h2>Добавки:</h2>
+            <label><input type="checkbox" value="сливочная моцарелла"> Сливочная моцарелла</label><br />
+            <label><input type="checkbox" value="сырный борт"> Сырный борт</label><br />
+            <label><input type="checkbox" value="чедер и пармезан"> Чедер и пармезан</label><br />
+        </div>
+
+        <button id="calculateBtn" class="hidden">Рассчитать стоимость и калорийность</button>
+
+        <h2>Результаты:</h2>
+        <p id="result"></p>
+    </div>
+
+    <script src="pizza.js"></script>
+</body>
 </html>
