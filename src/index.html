@@ -9,39 +9,67 @@
 <body>
     <div class="container">
         <h1>Заказ Пиццы</h1>
-        
-        <div class="menu-section">
-            <h2>Выберите пиццу:</h2>
-            <select id="pizzaType">
-                <option value="">--Выберите--</option>
-                <option value="Маргарита">Маргарита</option>
-                <option value="Пепперони">Пепперони</option>
-                <option value="Баварская">Баварская</option>
-            </select>
+
+        <div class="menu">
+            <!-- Левая часть: Выбор пиццы -->
+            <div class="pizza-selection">
+                <h2>Выберите пиццу:</h2>
+                <div class="pizza-images">
+                    <div class="pizza-item">
+                        <img src="assets/img/марго.png" alt="Маргарита" data-type="Маргарита" class="pizza-image">
+                        <p>Маргарита</p>
+                    </div>
+                    <div class="pizza-item">
+                        <img src="assets/img/пепа.png" alt="Пепперони" data-type="Пепперони" class="pizza-image">
+                        <p>Пепперони</p>
+                    </div>
+                    <div class="pizza-item">
+                        <img src="assets/img/бавар.png" alt="Баварская" data-type="Баварская" class="pizza-image">
+                        <p>Баварская</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая часть: Выбор параметров -->
+            <div class="order-details">
+                <!-- Выбор размера -->
+                <div id="sizeDiv" class="hidden">
+                    <h2>Выберите размер:</h2>
+                    <label><input type="radio" name="size" value="Маленькая"> Маленькая</label><br />
+                    <label><input type="radio" name="size" value="Большая"> Большая</label><br />
+                </div>
+
+                <!-- Добавки -->
+                <div id="toppingsDiv" class="hidden">
+                    <h2>Добавить по вкусу:</h2>
+                    <div class="topping-images">
+                        <div class="topping-item">
+                            <img src="assets/img/cheese_crust.jpg" alt="Сырный бортик" data-topping="сырный борт">
+                            <p>Сырный бортик</p>
+                        </div>
+                        <div class="topping-item">
+                            <img src="assets/img/mozzarella.jpg" alt="Сливочная моцарелла" data-topping="сливочная моцарелла">
+                            <p>Сливочная моцарелла</p>
+                        </div>
+                        <div class="topping-item">
+                            <img src="assets/img/cheddar.jpg" alt="Чеддер и пармезан" data-topping="чедер и пармезан">
+                            <p>Чеддер и пармезан</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопка расчета -->
+                <button id="calculateBtn" class="hidden">Добавить в корзину за 
+                    <span id="price">0</span> рублей (<span id="calories">0</span> Ккалорий)
+                </button>
+            </div>
         </div>
 
-        <div class="menu-section hidden" id="sizeDiv">
-            <h2>Выберите размер:</h2>
-            <select id="size">
-                <option value="">--Выберите--</option>
-                <option value="Большая">Большая</option>
-                <option value="Маленькая">Маленькая</option>
-            </select>
-        </div>
-
-        <div class="menu-section hidden" id="toppingsDiv">
-            <h2>Добавки:</h2>
-            <label><input type="checkbox" value="сливочная моцарелла"> Сливочная моцарелла</label><br />
-            <label><input type="checkbox" value="сырный борт"> Сырный борт</label><br />
-            <label><input type="checkbox" value="чедер и пармезан"> Чедер и пармезан</label><br />
-        </div>
-
-        <button id="calculateBtn" class="hidden">Рассчитать стоимость и калорийность</button>
-
-        <h2>Результаты:</h2>
+        <!-- Результат -->
         <p id="result"></p>
     </div>
 
-    <script src="pizza.js"></script>
+    <!-- Подключаем JavaScript -->
+    <script src="./pizza.js"></script>
 </body>
 </html>

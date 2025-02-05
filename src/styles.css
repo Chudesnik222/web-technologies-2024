@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 900px;
     margin: auto;
     background: #fff;
     padding: 20px;
@@ -18,15 +18,44 @@ h1, h2 {
     color: #333;
 }
 
-.menu-section {
-    margin-bottom: 20px;
+.menu {
+    display: flex; /* Используем flexbox для выравнивания */
 }
 
-select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.pizza-selection {
+    flex: 1; /* Занимает одну часть */
+}
+
+.order-details {
+    flex: 1; /* Занимает одну часть */
+    padding-left: 20px; /* Отступ между колонками */
+}
+
+.pizza-images {
+    display: flex;
+    justify-content: space-around; /* Распределяем изображения равномерно */
+}
+
+.pizza-item {
+    text-align: center; /* Центрируем текст под изображением */
+}
+
+.pizza-image {
+    width: 120px; /* Размер изображения пиццы */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+.topping-images {
+    display: flex; /* Используем flexbox для выравнивания добавок */
+    justify-content: space-around; /* Распределяем изображения равномерно */
+}
+
+.topping-item {
+    text-align: center; /* Центрируем текст под изображением добавки */
+}
+
+.topping-images img {
+    width: 80px; /* Размер изображения добавки */
 }
 
 button {
@@ -39,15 +68,9 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #218838; /* Цвет кнопки при наведении */
 }
 
 .hidden {
-    display: none;
-}
-
-#result {
-    background-color: #e9ecef;
-    padding: 10px;
-    border-radius: 5px;
+    display: none; /* Скрытие элементов */
 }
