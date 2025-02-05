@@ -15,16 +15,16 @@
             <div class="pizza-selection">
                 <h2>Выберите пиццу:</h2>
                 <div class="pizza-images">
-                    <div class="pizza-item">
-                        <img src="assets/img/марго.png" alt="Маргарита" data-type="Маргарита" class="pizza-image">
+                    <div class="pizza-item" data-type="Маргарита">
+                        <img src="assets/img/марго.avif" alt="Маргарита" class="pizza-image">
                         <p>Маргарита</p>
                     </div>
-                    <div class="pizza-item">
-                        <img src="assets/img/пепа.png" alt="Пепперони" data-type="Пепперони" class="pizza-image">
+                    <div class="pizza-item" data-type="Пепперони">
+                        <img src="assets/img/пепа.avif" alt="Пепперони" class="pizza-image">
                         <p>Пепперони</p>
                     </div>
-                    <div class="pizza-item">
-                        <img src="assets/img/бавар.png" alt="Баварская" data-type="Баварская" class="pizza-image">
+                    <div class="pizza-item" data-type="Баварская">
+                        <img src="assets/img/бавар.avif" alt="Баварская" class="pizza-image">
                         <p>Баварская</p>
                     </div>
                 </div>
@@ -33,33 +33,41 @@
             <!-- Правая часть: Выбор параметров -->
             <div class="order-details">
                 <!-- Выбор размера -->
-                <div id="sizeDiv" class="hidden">
+                <div id="sizeDiv">
                     <h2>Выберите размер:</h2>
-                    <label><input type="radio" name="size" value="Маленькая"> Маленькая</label><br />
-                    <label><input type="radio" name="size" value="Большая"> Большая</label><br />
+                    <div class="size-selector">
+                        <label class="size-option">
+                            <input type="radio" name="size" value="Маленькая">
+                            <span>Маленькая</span>
+                        </label>
+                        <label class="size-option">
+                            <input type="radio" name="size" value="Большая">
+                            <span>Большая</span>
+                        </label>
+                    </div>
                 </div>
 
                 <!-- Добавки -->
-                <div id="toppingsDiv" class="hidden">
+                <div id="toppingsDiv">
                     <h2>Добавить по вкусу:</h2>
                     <div class="topping-images">
-                        <div class="topping-item">
-                            <img src="assets/img/cheese_crust.jpg" alt="Сырный бортик" data-topping="сырный борт">
-                            <p>Сырный бортик</p>
+                        <div class="topping-item" data-topping="сырный борт">
+                            <img src="assets/img/борт.png" alt="Сырный бортик">
+                            <p>Сырный <br>бортик</p>
                         </div>
-                        <div class="topping-item">
-                            <img src="assets/img/mozzarella.jpg" alt="Сливочная моцарелла" data-topping="сливочная моцарелла">
-                            <p>Сливочная моцарелла</p>
+                        <div class="topping-item" data-topping="сливочная моцарелла">
+                            <img src="assets/img/моц.png" alt="Сливочная моцарелла">
+                            <p>Сливочная <br>моцарелла</p>
                         </div>
-                        <div class="topping-item">
-                            <img src="assets/img/cheddar.jpg" alt="Чеддер и пармезан" data-topping="чедер и пармезан">
-                            <p>Чеддер и пармезан</p>
+                        <div class="topping-item" data-topping="чедер и пармезан">
+                            <img src="assets/img/чедр.png" alt="Чеддер и пармезан">
+                            <p>Чеддер и <br>пармезан</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Кнопка расчета -->
-                <button id="calculateBtn" class="hidden">Добавить в корзину за 
+                <button id="calculateBtn">Добавить в корзину за <br>
                     <span id="price">0</span> рублей (<span id="calories">0</span> Ккалорий)
                 </button>
             </div>
@@ -69,7 +77,6 @@
         <p id="result"></p>
     </div>
 
-    <!-- Подключаем JavaScript -->
     <script src="./pizza.js"></script>
 </body>
 </html>

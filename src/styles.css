@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ebebeb;
     margin: 0;
     padding: 20px;
 }
@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 900px;
     margin: auto;
-    background: #fff;
+    background-color: #f0f0f0;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,58 +19,101 @@ h1, h2 {
 }
 
 .menu {
-    display: flex; /* Используем flexbox для выравнивания */
+    display: flex;
 }
 
 .pizza-selection {
-    flex: 1; /* Занимает одну часть */
+    flex: 1;
 }
 
 .order-details {
-    flex: 1; /* Занимает одну часть */
-    padding-left: 20px; /* Отступ между колонками */
+    flex: 1;
+    padding-left: 20px;
 }
 
 .pizza-images {
     display: flex;
-    justify-content: space-around; /* Распределяем изображения равномерно */
+    justify-content: space-around;
 }
 
 .pizza-item {
-    text-align: center; /* Центрируем текст под изображением */
-}
-
-.pizza-image {
-    width: 120px; /* Размер изображения пиццы */
-    cursor: pointer; /* Указатель при наведении */
-}
-
-.topping-images {
-    display: flex; /* Используем flexbox для выравнивания добавок */
-    justify-content: space-around; /* Распределяем изображения равномерно */
-}
-
-.topping-item {
-    text-align: center; /* Центрируем текст под изображением добавки */
-}
-
-.topping-images img {
-    width: 80px; /* Размер изображения добавки */
-}
-
-button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    text-align: center;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #218838; /* Цвет кнопки при наведении */
+.pizza-item.selected {
+    background-color: #d3d3d3;
+    border-radius: 8px;
 }
 
-.hidden {
-    display: none; /* Скрытие элементов */
+.pizza-image {
+    width: 160px;
+    height: auto;
+}
+
+.topping-images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.topping-item {
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.topping-item.selected {
+    background-color: #d3d3d3;
+    border-radius: 8px;
+}
+
+.topping-images img {
+    width: 127px;
+    height: auto;
+}
+
+button {
+    background-color: #f59a29;
+    font-size: 22px;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 50px;
+    width: 100%;
+    display: block;
+}
+
+button:hover {
+    background-color: #d77d10;
+}
+
+.size-selector {
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.size-option {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.size-option input {
+    display: none;
+}
+
+.size-option:hover {
+    background-color: #e0e0e0;
+}
+
+.size-option.selected {
+    background-color: #d2d2d2;
 }

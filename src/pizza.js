@@ -16,90 +16,84 @@ class Pizza {
       "чедер и пармезан": { price_small: 150, price_large: 300, calories: 50 },
   };
 
-  constructor(pizzaType) {
-      this.pizzaType = pizzaType || null; // Тип пиццы
-      this.size = null; // Размер
-      this.toppings = []; // Добавки
-  }
+constructor() {
+      this.pizzaType = null;
+      this.size = null;
+      this.toppings = [];
+}
 
-  addTopping(topping) {
+addTopping(topping) {
       if (!this.toppings.includes(topping)) this.toppings.push(topping);
       else this.toppings.splice(this.toppings.indexOf(topping), 1);
-  }
+      updateButton();
+}
 
-  calculatePrice() {
-      const basePrice = Pizza.PIZZA_TYPES[this.pizzaType].price || 0;
-      const sizePrice = Pizza.SIZE_TYPES[this.size]?.price || 0;
+calculatePrice() {
+      const basePrice = Pizza.PIZZA_TYPES[this.pizzaType]?.price || 0 ;
+      const sizePrice = Pizza.SIZE_TYPES[this.size]?.price || 0 ;
 
-      const toppingsPrice = this.toppings.reduce((total, topping) => {
+const toppingsPrice = this.toppings.reduce((total, topping) => {
           const toppingData = Pizza.TOPPINGS[topping];
           return total + (this.size === "Маленькая"
               ? toppingData.price_small || toppingData.price
               : toppingData.price_large || toppingData.price);
-      }, 0);
+}, 0 );
 
-      return basePrice + sizePrice + toppingsPrice;
-  }
+return basePrice + sizePrice + toppingsPrice;
 
-  calculateCalories() {
-      const baseCalories = Pizza.PIZZA_TYPES[this.pizzaType]?.calories || 0;
-      const sizeCalories = Pizza.SIZE_TYPES[this.size]?.calories || 0;
-
-      const toppingsCalories = this.toppings.reduce((total, topping) => total + Pizza.TOPPINGS[topping].calories, 0);
-
-      return baseCalories + sizeCalories + toppingsCalories;
-  }
 }
 
-// Логика выбора пиццы
-const pizzaImages = document.querySelectorAll('.pizza-image');
+calculateCalories() {
+    const baseCalories = Pizza.PIZZA_TYPES[this.pizzaType]?.calories || 0 ;
+
+    const sizeCalories = Pizza.SIZE_TYPES[this.size]?.calories || 0 ;
+
+    const toppingsCalories = this.toppings.reduce((total, topping) => total + Pizza.TOPPINGS[topping].calories, 0);
+
+    return baseCalories + sizeCalories + toppingsCalories;
+
+}
+}
+
 const pizza = new Pizza();
 
-pizzaImages.forEach(image => {
-    image.addEventListener('click', () => {
-        pizza.pizzaType = image.dataset.type;
+document.querySelectorAll('.pizza-item').forEach(item => {
+item.addEventListener('click', () => {
+document.querySelectorAll('.pizza-item').forEach(p => p.classList.remove('selected'));
+item.classList.add('selected');
+pizza.pizzaType = item.dataset.type;
 
-        // Показываем выбор размера
-        document.getElementById('sizeDiv').classList.remove('hidden');
-        document.getElementById('toppingsDiv').classList.add('hidden');
-        document.getElementById('calculateBtn').classList.add('hidden');
-        pizza.size = null; // Сбрасываем размер
-        pizza.toppings = []; // Сбрасываем добавки
-        updateButton();
-    });
+updateButton();
+});
 });
 
-// Логика выбора размера
-document.querySelectorAll('input[name=size]').forEach(radio => {
-    radio.addEventListener('change', () => {
-        pizza.size = radio.value;
+document.querySelector('input[name=size][value="Маленькая"]').checked = true;
+pizza.size = "Маленькая";
 
-        // Показываем добавки
-        document.getElementById('toppingsDiv').classList.remove('hidden');
-        updateButton();
-    });
+document.querySelectorAll('input[name=size]').forEach(radio => {
+radio.addEventListener('change', () => {
+pizza.size = radio.value;
+
+document.querySelectorAll('.size-option').forEach(option => option.classList.remove('selected'));
+radio.parentElement.classList.add('selected');
+
+updateButton();
+});
 });
 
-// Логика выбора добавок
-document.querySelectorAll('.topping-item img').forEach(img => {
-    img.addEventListener('click', () => {
-        const toppingName = img.alt.toLowerCase();
-        pizza.addTopping(toppingName);
+document.querySelectorAll('.topping-item').forEach(item => {
+item.addEventListener('click', () => {
+item.classList.toggle('selected');
+pizza.addTopping(item.dataset.topping);
 
-        img.classList.toggle('selected'); // Подсветка выбранной добавки
-        updateButton();
-    });
+updateButton();
+});
 });
 
-// Обновление кнопки с ценой и калориями
-function updateButton() {
+function updateButton() {
     const totalPrice = pizza.calculatePrice();
     const totalCalories = pizza.calculateCalories();
 
     document.getElementById('price').innerText = totalPrice || '0';
     document.getElementById('calories').innerText = totalCalories || '0';
-
-    if (pizza.size && pizza.pizzaType) {
-        document.getElementById('calculateBtn').classList.remove('hidden');
-    }
 }
