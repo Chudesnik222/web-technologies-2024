@@ -9,10 +9,22 @@
     <link rel="stylesheet" href="/src/assets/styles/style.css">
 </head>
 <body>
-<div class="test" style="color: blue">
-    test
-</div>
 
-<script src="index.js"></script>
+<section
+    id="catalog" 
+    class="catalog"
+>
+    <div 
+        class="catalog__items"
+        data-catalog-items
+    ></div>
+
+    <div 
+        class="catalog__pagination"
+        data-catalog-pagination
+    ></div>
+</section>
+
+<script src="catalog.js" type="module"></script>
 </body>
 </html>
