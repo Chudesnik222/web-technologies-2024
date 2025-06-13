@@ -1,14 +1,16 @@
-@import "./global.css";
-@import "./fonts.css";
-@import "./utils.css";
-@import "./catalog.css";
-@import "./post.css";
-@import "./photo.css";
-
-.test {
-    color: yellow !important;
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f0f0f0;
 }
-
-.test {
-    color: red !important;
+header {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
 }
