@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?= $title ?></title>
+    <title><?=$title?></title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <?= $menu ?>
-    <?= $content ?>
+<?=$menu?>
+<?=$content?>
 </body>
 </html>
